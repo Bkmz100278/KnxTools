@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C81A2150-A7B0-4CFE-BA64-DFE7A109E124}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KnxTools</RootNamespace>
+    <AssemblyName>KnxTools</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="accoremgd">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2021\accoremgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acdbmgd">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2021\acdbmgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acdbmgdbrep">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2021\acdbmgdbrep.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2021\acmgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AdWindows">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\AutoCAD 2021\AdWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calc\CalcCommands.cs" />
+    <Compile Include="Calc\CalcRunner.cs" />
+    <Compile Include="Calc\CalcUtil.cs" />
+    <Compile Include="Calc\Diag\DiagCatalog.cs" />
+    <Compile Include="Calc\Diag\DiagExcel.cs" />
+    <Compile Include="Calc\Diag\DiagLog.cs" />
+    <Compile Include="Calc\PanelLink.cs" />
+    <Compile Include="Calc\Steps\Step1_Cos.cs" />
+    <Compile Include="Calc\Steps\Step2_Numbering.cs" />
+    <Compile Include="Calc\Steps\Step3_Loads.cs" />
+    <Compile Include="Calc\Steps\Step4_Panel.cs" />
+    <Compile Include="Calc\Steps\Step5_Channel.cs" />
+    <Compile Include="Calc\Steps\Step6_PanelName.cs" />
+    <Compile Include="Calc\Steps\Step7_Propagate.cs" />
+    <Compile Include="Calc\Steps\Step8_Channels.cs" />
+    <Compile Include="Check\CheckCatalog.cs" />
+    <Compile Include="Check\CheckCommands.cs" />
+    <Compile Include="Check\CheckContext.cs" />
+    <Compile Include="Check\CheckDebug.cs" />
+    <Compile Include="Check\CheckExcel.cs" />
+    <Compile Include="Check\CheckLog.cs" />
+    <Compile Include="Check\CheckRunner.cs" />
+    <Compile Include="Check\Checks\Chk2_PhysAddresses.cs" />
+    <Compile Include="Check\Checks\Chk3_GroupAddresses.cs" />
+    <Compile Include="Check\Checks\Chk4_Channels.cs" />
+    <Compile Include="Check\Checks\Chk7_Inputs.cs" />
+    <Compile Include="Check\CheckUtil.cs" />
+    <Compile Include="Check\Checks\Chk5_Power.cs" />
+    <Compile Include="Check\Checks\Chk6_Dali.cs" />
+    <Compile Include="Check\Checks\Chk8_Numbering.cs" />
+    <Compile Include="Check\UI\CheckRow.cs" />
+    <Compile Include="Check\UI\CheckWindow.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="Export\ModelExporter.cs" />
+    <Compile Include="Export\XlsxWriter.cs" />
+    <Compile Include="Geometry\Polygon2d.cs" />
+    <Compile Include="Json\Dto.cs" />
+    <Compile Include="Json\JsonBuilder.cs" />
+    <Compile Include="Json\JsonWriter.cs" />
+    <Compile Include="Json\KnxAddr.cs" />
+    <Compile Include="Model\BlockEntity.cs" />
+    <Compile Include="Model\Containers.cs" />
+    <Compile Include="Model\NamedValue.cs" />
+    <Compile Include="Names.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reading\DrawingReader.cs" />
+    <Compile Include="Reading\MTextClean.cs" />
+    <Compile Include="Report.cs" />
+    <Compile Include="RibbonBuilder.cs" />
+    <Compile Include="Spec\SpecAccess.cs" />
+    <Compile Include="Spec\SpecBuilder.cs" />
+    <Compile Include="Spec\SpecCommands.cs" />
+    <Compile Include="Spec\SpecExcel.cs" />
+    <Compile Include="Spec\SpecModel.cs" />
+    <Compile Include="Spec\SpecParse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PackageContents.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\IconMain32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

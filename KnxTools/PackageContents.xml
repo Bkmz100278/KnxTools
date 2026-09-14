@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0"
+                    AutodeskProduct="AutoCAD"
+                    ProductType="Application"
+                    Name="KnxTools"
+                    AppVersion="0.1.0"
+                    Description="KNX tools — Hello World"
+                    Author="Илья Жарков"
+                    ProductCode="{7A0C4E21-2B6F-4B7E-9C1D-0E2F3A4B5C6D}"
+                    UpgradeCode="{8B1D5F32-3C70-4C8F-AD2E-1F304B5C6D7E}">
+  <CompanyDetails Name="Илья Жарков" />
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R24.0" SeriesMax="R24.0" />
+    <ComponentEntry AppName="KnxTools"
+                    ModuleName="./Contents/KnxTools.dll"
+                    AppDescription="KNX tools"
+                    LoadOnAutoCADStartup="True"
+                    LoadOnCommandInvocation="False">
+      <Commands GroupName="KNXTOOLS">
+        <Command Global="KNXHELLO" Local="KNXHELLO" />
+      </Commands>
+    </ComponentEntry>
+  </Components>
+</ApplicationPackage>
